@@ -11,7 +11,7 @@ export default function Stats() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center divide-x divide-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-y sm:divide-y-0 sm:divide-x divide-border">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -25,11 +25,25 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Typography */
-  --font-size-hero: 64px;
-  --font-size-h1: 48px;
-  --font-size-h2: 36px;
-  --font-size-h3: 24px;
+  /* Typography - Mobile First Base */
+  --font-size-hero: 40px;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+
+  @media (min-width: 768px) {
+    --font-size-hero: 56px;
+    --font-size-h1: 40px;
+    --font-size-h2: 30px;
+    --font-size-h3: 22px;
+  }
+
+  @media (min-width: 1024px) {
+    --font-size-hero: 64px;
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-h3: 24px;
+  }
 
   /* Layout */
   --max-width-container: 1280px;

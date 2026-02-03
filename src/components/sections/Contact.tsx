@@ -8,24 +8,24 @@ export default function Contact() {
   return (
     <section className="section-padding bg-muted/30">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 overflow-hidden rounded-3xl bg-card border border-border shadow-2xl">
+        <div className="grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-card border border-border shadow-2xl">
           {/* Contact Info Side */}
-          <div className="bg-primary p-12 text-primary-foreground flex flex-col justify-between">
+          <div className="bg-primary p-6 sm:p-8 md:p-12 text-primary-foreground flex flex-col justify-between">
             <div>
-              <h2 className="text-3xl font-bold font-heading mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-4 sm:mb-6 text-center sm:text-left">
                 Get in Touch
               </h2>
-              <p className="text-primary-foreground/80 mb-12 text-lg">
+              <p className="text-primary-foreground/80 mb-8 sm:mb-12 text-base sm:text-lg text-center sm:text-left">
                 Ready to start your journey? Visit us or drop a message. We'd
                 love to hear from you.
               </p>
 
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-8">
                 <div className="flex items-start gap-4">
-                  <MapPin className="text-primary-foreground mt-1" />
+                  <MapPin className="text-primary-foreground mt-1 shrink-0" />
                   <div>
                     <h5 className="font-bold">Visit Us</h5>
-                    <p className="text-primary-foreground/70">
+                    <p className="text-primary-foreground/70 text-sm sm:text-base">
                       123 Education Lane, Knowledge Park
                       <br />
                       New Delhi, India 110001
@@ -33,28 +33,28 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="text-primary-foreground mt-1" />
+                  <Phone className="text-primary-foreground mt-1 shrink-0" />
                   <div>
                     <h5 className="font-bold">Call Us</h5>
-                    <p className="text-primary-foreground/70">
+                    <p className="text-primary-foreground/70 text-sm sm:text-base">
                       +91 98765 43210
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="text-primary-foreground mt-1" />
+                  <Mail className="text-primary-foreground mt-1 shrink-0" />
                   <div>
                     <h5 className="font-bold">Email Us</h5>
-                    <p className="text-primary-foreground/70">
+                    <p className="text-primary-foreground/70 text-sm sm:text-base">
                       admissions@coaching.com
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Clock className="text-primary-foreground mt-1" />
+                  <Clock className="text-primary-foreground mt-1 shrink-0" />
                   <div>
                     <h5 className="font-bold">Opening Hours</h5>
-                    <p className="text-primary-foreground/70">
+                    <p className="text-primary-foreground/70 text-sm sm:text-base">
                       Mon - Sat: 9:00 AM - 7:00 PM
                     </p>
                   </div>
@@ -62,7 +62,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-12 hidden sm:block">
               {/* Map Placeholder */}
               <div className="w-full h-48 bg-black/20 rounded-xl flex items-center justify-center border border-white/10">
                 <span className="text-sm uppercase tracking-widest opacity-70">
@@ -73,59 +73,59 @@ export default function Contact() {
           </div>
 
           {/* Form Side */}
-          <div className="p-12">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
+          <div className="p-6 sm:p-8 md:p-12">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 text-center sm:text-left">
               Book a Free Consultation
             </h3>
-            <form className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
+            <form className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">
+                  <label className="text-xs sm:text-sm font-medium text-foreground">
                     First Name
                   </label>
                   <Input
                     placeholder="John"
-                    className="bg-background border-border"
+                    className="bg-background border-border h-10 sm:h-12"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">
+                  <label className="text-xs sm:text-sm font-medium text-foreground">
                     Last Name
                   </label>
                   <Input
                     placeholder="Doe"
-                    className="bg-background border-border"
+                    className="bg-background border-border h-10 sm:h-12"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-xs sm:text-sm font-medium text-foreground">
                   Email Address
                 </label>
                 <Input
                   type="email"
                   placeholder="john@example.com"
-                  className="bg-background border-border"
+                  className="bg-background border-border h-10 sm:h-12"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-xs sm:text-sm font-medium text-foreground">
                   Phone Number
                 </label>
                 <Input
                   type="tel"
                   placeholder="+91 90000 00000"
-                  className="bg-background border-border"
+                  className="bg-background border-border h-10 sm:h-12"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-xs sm:text-sm font-medium text-foreground">
                   Interested In
                 </label>
-                <select className="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-foreground">
+                <select className="flex h-10 sm:h-12 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-foreground transition-all">
                   <option>IELTS Coaching</option>
                   <option>PTE Coaching</option>
                   <option>Study Visa</option>
@@ -134,18 +134,18 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-xs sm:text-sm font-medium text-foreground">
                   Message
                 </label>
                 <Textarea
                   placeholder="Tell us about your goals..."
-                  className="bg-background border-border min-h-[120px]"
+                  className="bg-background border-border min-h-[100px] sm:min-h-[120px] text-sm"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-600 h-12 text-lg text-primary-foreground transition-all shadow-lg shadow-primary/20"
+                className="w-full bg-primary hover:bg-primary-600 h-10 sm:h-12 text-base sm:text-lg text-primary-foreground transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
               >
                 Send Message
               </Button>

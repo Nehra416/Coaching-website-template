@@ -38,7 +38,9 @@ export default function Navbar() {
           <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
             <span className="text-white font-bold text-xl">C</span>
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
+          <span
+            className={`text-xl font-bold tracking-tight ${scrolled ? "text-foreground" : "text-white"}`}
+          >
             Coaching<span className="text-primary">Institute</span>
           </span>
         </Link>
@@ -66,14 +68,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-foreground"
+            className={`p-2 transition-colors ${scrolled || isOpen ? "text-foreground" : "text-white"}`}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X /> : <Menu />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -82,29 +84,43 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-effect border-b border-border overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-x-0 top-[60px] mx-4 md:hidden glass-effect rounded-2xl border border-border overflow-hidden shadow-2xl z-40 bg-background/95 backdrop-blur-xl"
           >
-            <div className="container-custom flex flex-col gap-4 py-8">
-              {navLinks.map((link) => (
-                <Link
+            <div className="flex flex-col gap-2 p-6">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-lg font-semibold py-3 px-4 rounded-xl flex items-center justify-between text-foreground hover:bg-primary/5 hover:text-primary transition-all"
+                  >
+                    {link.name}
+                    <span className="opacity-30">→</span>
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="bg-primary text-primary-foreground text-center px-6 py-3 rounded-xl font-semibold hover:bg-primary-600 transition-colors mt-4"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.05 }}
               >
-                Enroll Now
-              </Link>
+                <Link
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="bg-primary text-primary-foreground text-center px-6 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all mt-6 shadow-lg shadow-primary/25 active:scale-95 block"
+                >
+                  Enroll Now
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

@@ -37,15 +37,17 @@ export default function About() {
               />
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-xl border border-border max-w-xs hidden md:block">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
-                  <CheckCircle2 size={32} />
+            <div className="absolute -bottom-4 sm:-bottom-6 -right-2 sm:-right-6 bg-card p-4 sm:p-6 rounded-xl shadow-xl border border-border max-w-[160px] sm:max-w-xs">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="bg-primary/10 p-2 sm:p-3 rounded-full text-primary shrink-0">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
                 <div>
-                  <p className="font-bold text-lg text-foreground">15+ Years</p>
-                  <p className="text-sm text-muted-foreground">
-                    Of Excellence in Coaching
+                  <p className="font-bold text-base sm:text-lg text-foreground leading-tight">
+                    15+ Years
+                  </p>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
+                    Of Excellence
                   </p>
                 </div>
               </div>
