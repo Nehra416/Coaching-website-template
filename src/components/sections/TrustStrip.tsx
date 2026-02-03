@@ -9,7 +9,7 @@ const stats = [
 
 export default function TrustStrip() {
   return (
-    <div className="bg-primary-50 py-12 border-b border-primary-100">
+    <div className="bg-muted/40 py-12 border-b border-border">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -17,10 +17,10 @@ export default function TrustStrip() {
               key={index}
               className="flex flex-col items-center text-center space-y-2 group"
             >
-              <div className="p-3 bg-white rounded-full shadow-sm text-primary group-hover:scale-110 transition-transform duration-300">
+              <div className="p-3 bg-card border border-border rounded-full shadow-sm text-primary group-hover:scale-110 transition-transform duration-300">
                 <stat.icon size={24} />
               </div>
-              <h3 className="text-2xl font-bold font-heading text-primary-900">
+              <h3 className="text-2xl font-bold font-heading text-foreground">
                 {stat.value}
               </h3>
               <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">

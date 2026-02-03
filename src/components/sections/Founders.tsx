@@ -18,7 +18,7 @@ const founders = [
 
 export default function Founders() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-muted/30 transition-colors duration-300">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary font-semibold tracking-wide uppercase text-sm">
@@ -33,10 +33,10 @@ export default function Founders() {
           {founders.map((founder, i) => (
             <Card
               key={i}
-              className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow bg-gray-50"
+              className="overflow-hidden border border-border shadow-lg hover:shadow-xl transition-shadow bg-card"
             >
               <CardContent className="p-8 flex flex-col items-center text-center">
-                <Avatar className="w-32 h-32 mb-6 border-4 border-white shadow-md">
+                <Avatar className="w-32 h-32 mb-6 border-4 border-background shadow-md">
                   <AvatarImage src={`/images/founder${i + 1}.webp`} />
                   <AvatarFallback className="text-2xl font-bold bg-primary text-white">
                     {founder.name
@@ -45,7 +45,7 @@ export default function Founders() {
                       .join("")}
                   </AvatarFallback>
                 </Avatar>
-                <h3 className="text-2xl font-bold font-heading mb-1">
+                <h3 className="text-2xl font-bold font-heading mb-1 text-foreground">
                   {founder.name}
                 </h3>
                 <p className="text-primary font-medium mb-4">{founder.role}</p>
@@ -54,13 +54,13 @@ export default function Founders() {
                 <div className="flex gap-4">
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Linkedin size={20} />
                   </a>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Twitter size={20} />
                   </a>

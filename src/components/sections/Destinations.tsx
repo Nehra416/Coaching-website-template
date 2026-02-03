@@ -10,7 +10,7 @@ export default function Destinations() {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-background transition-colors duration-300">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
@@ -32,12 +32,12 @@ export default function Destinations() {
               key={i}
               className="group cursor-pointer overflow-hidden border-none shadow-lg"
             >
-              <div className="h-48 bg-gray-200 relative overflow-hidden">
+              <div className="h-48 bg-muted relative overflow-hidden">
                 {/* Simulated Image Placeholder with Gradient */}
                 <div
                   className={`absolute inset-0 ${c.img} opacity-20 group-hover:scale-110 transition-transform duration-500`}
                 ></div>
-                <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-gray-300 opacity-50">
+                <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-foreground opacity-10">
                   {c.code}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

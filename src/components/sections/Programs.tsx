@@ -54,13 +54,13 @@ const programs = [
 
 export default function Programs() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold tracking-wide uppercase text-sm">
             Our Programs
           </span>
-          <h2 className="text-h2 font-heading font-bold mt-2 mb-4">
+          <h2 className="text-h2 font-heading font-bold mt-2 mb-4 text-foreground">
             Comprehensive Learning Paths
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -77,29 +77,32 @@ export default function Programs() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-none relative overflow-hidden group">
+              <Card className="h-full bg-card hover:shadow-xl transition-all duration-300 border border-border relative overflow-hidden group">
                 <div
                   className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${program.color}`}
                 />
                 <CardHeader>
                   <div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${program.color} flex items-center justify-center text-white mb-4 shadow-lg ${program.shadow} group-hover:scale-110 transition-transform`}
+                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${program.color} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform`}
                   >
                     <program.icon size={24} />
                   </div>
-                  <CardTitle>{program.title}</CardTitle>
+                  <CardTitle className="text-foreground">
+                    {program.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-muted-foreground">
                     {program.description}
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
                   <Button
                     variant="ghost"
-                    className="p-0 text-primary hover:bg-transparent hover:text-primary-700 group-hover:translate-x-1 transition-transform"
+                    className="p-0 text-primary hover:bg-transparent hover:text-primary transition-all group-hover:gap-2"
                   >
-                    Explore Course <ArrowRight className="ml-2 h-4 w-4" />
+                    Explore Course{" "}
+                    <ArrowRight className="ml-1 h-4 w-4 transition-all group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>

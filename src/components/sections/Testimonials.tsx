@@ -33,13 +33,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-primary-50">
+    <section className="section-padding bg-muted/20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary font-semibold tracking-wide uppercase text-sm">
             Testimonials
           </span>
-          <h2 className="text-h2 font-heading font-bold mt-2">
+          <h2 className="text-h2 font-heading font-bold mt-2 text-foreground">
             What Our Students Say
           </h2>
         </div>
@@ -48,10 +48,10 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <Card
               key={i}
-              className="border-none shadow-md hover:shadow-lg transition-shadow"
+              className="bg-card border border-border shadow-md hover:shadow-lg transition-shadow"
             >
               <CardHeader>
-                <div className="flex text-yellow-500 gap-1 mb-4">
+                <div className="flex text-warning gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} size={16} fill="currentColor" />
                   ))}
@@ -62,19 +62,19 @@ export default function Testimonials() {
               </CardHeader>
               <CardFooter className="flex items-center gap-4">
                 <Avatar>
-                  <AvatarFallback className="bg-primary text-white">
+                  <AvatarFallback className="bg-primary text-primary-foreground">
                     {t.name[0]}
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <h4 className="font-bold text-gray-900 leading-none">
+                  <h4 className="font-bold text-foreground leading-none">
                     {t.name}
                   </h4>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="text-xs text-muted-foreground">
                       {t.course}
                     </span>
-                    <span className="text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold bg-success/10 text-success px-2 py-0.5 rounded-full border border-success/20">
                       {t.score}
                     </span>
                   </div>

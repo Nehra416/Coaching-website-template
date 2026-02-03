@@ -26,18 +26,22 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-background">
       <div className="container-custom max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-h2 font-heading font-bold text-gray-900">
+          <h2 className="text-h2 font-heading font-bold text-foreground">
             Frequently Asked Questions
           </h2>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`}>
-              <AccordionTrigger className="text-lg font-medium text-left">
+            <AccordionItem
+              key={i}
+              value={`item-${i}`}
+              className="border-border"
+            >
+              <AccordionTrigger className="text-lg font-medium text-left text-foreground hover:text-primary transition-colors">
                 {f.q}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">

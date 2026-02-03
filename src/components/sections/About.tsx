@@ -16,7 +16,10 @@ export default function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="section-padding bg-white overflow-hidden" ref={ref}>
+    <section
+      className="section-padding bg-background overflow-hidden"
+      ref={ref}
+    >
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -34,13 +37,13 @@ export default function About() {
               />
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+            <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-xl border border-border max-w-xs hidden md:block">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-full text-primary">
                   <CheckCircle2 size={32} />
                 </div>
                 <div>
-                  <p className="font-bold text-lg text-gray-900">15+ Years</p>
+                  <p className="font-bold text-lg text-foreground">15+ Years</p>
                   <p className="text-sm text-muted-foreground">
                     Of Excellence in Coaching
                   </p>
@@ -58,7 +61,7 @@ export default function About() {
             <span className="text-primary font-semibold tracking-wide uppercase text-sm">
               About Us
             </span>
-            <h2 className="text-h2 font-heading font-bold text-gray-900 leading-tight">
+            <h2 className="text-h2 font-heading font-bold text-foreground leading-tight">
               Bridging the Gap Between{" "}
               <span className="text-primary">Dreams</span> and Reality
             </h2>
@@ -71,8 +74,8 @@ export default function About() {
             <div className="space-y-4 pt-4">
               {features.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-green-500 h-5 w-5" />
-                  <span className="text-gray-700 font-medium">{item}</span>
+                  <CheckCircle2 className="text-success h-5 w-5" />
+                  <span className="text-foreground/80 font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -80,7 +83,7 @@ export default function About() {
             <div className="pt-6">
               <Button
                 size="lg"
-                className="px-8 bg-primary-600 hover:bg-primary-700"
+                className="px-8 bg-primary hover:bg-primary-600"
               >
                 Learn More About Us
               </Button>

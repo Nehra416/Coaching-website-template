@@ -1,3 +1,4 @@
+import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import TrustStrip from "@/components/sections/TrustStrip";
 import About from "@/components/sections/About";
@@ -11,10 +12,12 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
+      <Navbar />
       <Hero />
       <TrustStrip />
       <About />
@@ -28,13 +31,7 @@ export default function Home() {
       <WhyChooseUs />
       <FAQ />
       <Contact />
-
-      {/* Simple Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 text-white py-12 text-center text-sm text-gray-400">
-        <p>
-          © {new Date().getFullYear()} Coaching Institute. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }
