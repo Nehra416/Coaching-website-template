@@ -7,12 +7,15 @@ const founders = [
     name: "Dr. Rajesh Kumar",
     role: "Director & Lead Trainer",
     bio: "Ph.D. in Linguistics with 15+ years of experience in IELTS training. Certified by British Council.",
-    // image: "/images/founder1.jpg" // Placeholder fallback
+    image:
+      "https://images.unsplash.com/photo-1544168190-79c17527004f?auto=format&fit=crop&q=80&w=400&h=400",
   },
   {
     name: "Sarah Jenkins",
     role: "Head of International Affairs",
     bio: "Ex-Visa Officer with deep insights into immigration policies of Canada and Australia.",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400",
   },
 ];
 
@@ -37,7 +40,7 @@ export default function Founders() {
             >
               <CardContent className="p-8 flex flex-col items-center text-center">
                 <Avatar className="w-32 h-32 mb-6 border-4 border-background shadow-md">
-                  <AvatarImage src={`/images/founder${i + 1}.webp`} />
+                  <AvatarImage src={founder.image} alt={founder.name} />
                   <AvatarFallback className="text-2xl font-bold bg-primary text-white">
                     {founder.name
                       .split(" ")

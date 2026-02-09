@@ -8,15 +8,22 @@ export default function Hero() {
   return (
     <section className="relative h-screen min-h-[800px] w-full overflow-hidden flex items-center justify-center bg-[#192025]">
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero.png"
-          alt="Students studying"
-          fill
-          className="object-cover opacity-60 mix-blend-overlay"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#192025] via-[#192025]/80 to-transparent" />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <Image
+            src="/images/hero.png"
+            alt="Students studying"
+            fill
+            className="object-cover opacity-60 mix-blend-overlay"
+            priority
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-linear-to-r from-[#192025] via-[#192025]/80 to-transparent" />
       </div>
 
       <div className="container-custom relative z-10 py-20 lg:py-0">

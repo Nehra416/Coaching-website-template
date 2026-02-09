@@ -25,25 +25,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Typography - Mobile First Base */
-  --font-size-hero: 40px;
-  --font-size-h1: 32px;
-  --font-size-h2: 24px;
-  --font-size-h3: 20px;
-
-  @media (min-width: 768px) {
-    --font-size-hero: 56px;
-    --font-size-h1: 40px;
-    --font-size-h2: 30px;
-    --font-size-h3: 22px;
-  }
-
-  @media (min-width: 1024px) {
-    --font-size-hero: 64px;
-    --font-size-h1: 48px;
-    --font-size-h2: 36px;
-    --font-size-h3: 24px;
-  }
+  /* Typography */
+  --text-hero: var(--fs-hero);
+  --text-h1: var(--fs-h1);
+  --text-h2: var(--fs-h2);
+  --text-h3: var(--fs-h3);
 
   /* Layout */
   --max-width-container: 1280px;
@@ -80,14 +66,35 @@
 }
 
 @utility glass-effect {
-  background-color: var(--background);
-  opacity: 0.8;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background-color: color-mix(in srgb, var(--background), transparent 20%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid color-mix(in srgb, var(--border), transparent 50%);
 }
 
 :root {
   color-scheme: light;
+
+  /* Responsive Font Sizes */
+  --fs-hero: 40px;
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+
+  @media (min-width: 768px) {
+    --fs-hero: 56px;
+    --fs-h1: 40px;
+    --fs-h2: 30px;
+    --fs-h3: 22px;
+  }
+
+  @media (min-width: 1024px) {
+    --fs-hero: 64px;
+    --fs-h1: 48px;
+    --fs-h2: 36px;
+    --fs-h3: 24px;
+  }
+
   /* Light Mode */
   --background: #fafaf9;
   --foreground: #192025;

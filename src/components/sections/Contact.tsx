@@ -1,23 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="section-padding bg-muted/30">
+    <section className="py-12 sm:py-20 bg-muted/30">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-card border border-border shadow-2xl">
           {/* Contact Info Side */}
-          <div className="bg-primary p-6 sm:p-8 md:p-12 text-primary-foreground flex flex-col justify-between">
+          <div className="bg-primary p-6 sm:p-8 md:p-10 text-primary-foreground flex flex-col justify-between">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading mb-4 sm:mb-6 text-center sm:text-left">
                 Get in Touch
               </h2>
-              <p className="text-primary-foreground/80 mb-8 sm:mb-12 text-base sm:text-lg text-center sm:text-left">
-                Ready to start your journey? Visit us or drop a message. We'd
-                love to hear from you.
+              <p className="text-primary-foreground/80 mb-6 sm:mb-8 text-base text-center sm:text-left">
+                Ready to start your journey? Visit us or drop a message.
+                We&apos;d love to hear from you.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-8">
@@ -62,12 +61,20 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-12 hidden sm:block">
+            <div className="mt-8 hidden sm:block">
               {/* Map Placeholder */}
               <div className="w-full h-48 bg-black/20 rounded-xl flex items-center justify-center border border-white/10">
-                <span className="text-sm uppercase tracking-widest opacity-70">
-                  Interactive Map
-                </span>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222993.98531839202!2d75.59072417645152!3d29.156390001607548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232d8011d0c37%3A0x1d3f0df105af1178!2sHisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1770633658266!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-xl grayscale opacity-80 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                  title="Location Map"
+                />
               </div>
             </div>
           </div>
@@ -83,19 +90,13 @@ export default function Contact() {
                   <label className="text-xs sm:text-sm font-medium text-foreground">
                     First Name
                   </label>
-                  <Input
-                    placeholder="John"
-                    className="bg-background border-border h-10 sm:h-12"
-                  />
+                  <Input placeholder="John" className="h-10 sm:h-12" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs sm:text-sm font-medium text-foreground">
                     Last Name
                   </label>
-                  <Input
-                    placeholder="Doe"
-                    className="bg-background border-border h-10 sm:h-12"
-                  />
+                  <Input placeholder="Doe" className="h-10 sm:h-12" />
                 </div>
               </div>
 
@@ -106,7 +107,7 @@ export default function Contact() {
                 <Input
                   type="email"
                   placeholder="john@example.com"
-                  className="bg-background border-border h-10 sm:h-12"
+                  className="h-10 sm:h-12"
                 />
               </div>
 
@@ -117,7 +118,7 @@ export default function Contact() {
                 <Input
                   type="tel"
                   placeholder="+91 90000 00000"
-                  className="bg-background border-border h-10 sm:h-12"
+                  className="h-10 sm:h-12"
                 />
               </div>
 
@@ -139,7 +140,7 @@ export default function Contact() {
                 </label>
                 <Textarea
                   placeholder="Tell us about your goals..."
-                  className="bg-background border-border min-h-[100px] sm:min-h-[120px] text-sm"
+                  className="min-h-[100px] text-sm"
                 />
               </div>
 

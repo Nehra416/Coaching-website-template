@@ -12,6 +12,25 @@ const features = [
   "Flexible Morning & Evening Batches",
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 export default function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -73,14 +92,24 @@ export default function About() {
               students achieve their desired scores in IELTS and PTE.
             </p>
 
-            <div className="space-y-4 pt-4">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-4 pt-4"
+            >
               {features.map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
+                <motion.div
+                  key={i}
+                  variants={itemVariants}
+                  className="flex items-center gap-3"
+                >
                   <CheckCircle2 className="text-success h-5 w-5" />
                   <span className="text-foreground/80 font-medium">{item}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="pt-6">
               <Button

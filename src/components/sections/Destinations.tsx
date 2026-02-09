@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Destinations() {
@@ -40,7 +40,7 @@ export default function Destinations() {
                 <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-foreground opacity-10">
                   {c.code}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold">{c.name}</h3>
                   <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">

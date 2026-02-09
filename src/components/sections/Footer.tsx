@@ -8,7 +8,6 @@ import {
   Linkedin,
   Mail,
   Phone,
-  MapPin,
 } from "lucide-react";
 
 const footerLinks = [
