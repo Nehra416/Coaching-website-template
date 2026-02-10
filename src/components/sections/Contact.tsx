@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -86,47 +88,50 @@ export default function Contact() {
             </h3>
             <form className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-xs sm:text-sm font-medium text-foreground">
+                <div className="space-y-2 text-base">
+                  <label className="font-medium text-foreground">
                     First Name
                   </label>
-                  <Input placeholder="John" className="h-10 sm:h-12" />
+                  <Input
+                    placeholder="John"
+                    className="h-10 sm:h-12 text-base"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs sm:text-sm font-medium text-foreground">
+                  <label className="font-medium text-foreground">
                     Last Name
                   </label>
-                  <Input placeholder="Doe" className="h-10 sm:h-12" />
+                  <Input placeholder="Doe" className="h-10 sm:h-12 text-base" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-medium text-foreground">
+                <label className="font-medium text-foreground">
                   Email Address
                 </label>
                 <Input
                   type="email"
                   placeholder="john@example.com"
-                  className="h-10 sm:h-12"
+                  className="h-10 sm:h-12 text-base"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-medium text-foreground">
+                <label className="font-medium text-foreground">
                   Phone Number
                 </label>
                 <Input
                   type="tel"
                   placeholder="+91 90000 00000"
-                  className="h-10 sm:h-12"
+                  className="h-10 sm:h-12 text-base"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-medium text-foreground">
+                <label className="font-medium text-foreground">
                   Interested In
                 </label>
-                <select className="flex h-10 sm:h-12 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-foreground transition-all">
+                <select className="flex h-10 sm:h-12 w-full rounded-md text-base border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-foreground transition-all">
                   <option>IELTS Coaching</option>
                   <option>PTE Coaching</option>
                   <option>Study Visa</option>
@@ -135,17 +140,18 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-medium text-foreground">
-                  Message
-                </label>
+                <label className="font-medium text-foreground">Message</label>
                 <Textarea
                   placeholder="Tell us about your goals..."
-                  className="min-h-[100px] text-sm"
+                  className="min-h-[100px] text-base"
                 />
               </div>
 
               <Button
                 type="submit"
+                onClick={() =>
+                  window.open("https://wa.me/8221800297", "_blank")
+                }
                 className="w-full bg-primary hover:bg-primary-600 h-10 sm:h-12 text-base sm:text-lg text-primary-foreground transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
               >
                 Send Message

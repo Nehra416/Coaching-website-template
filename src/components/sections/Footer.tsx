@@ -51,9 +51,9 @@ export default function Footer() {
   return (
     <footer className="bg-muted pt-20 pb-10 border-t border-border">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-white font-bold text-xl">C</span>
@@ -107,7 +107,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Coaching Institute. All rights
             reserved.
           </p>
-          <div className="flex items-center gap-8">
+          <div className="flex md:flex-row flex-col items-center gap-3 md:gap-8">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Mail size={16} className="text-primary" />
               <span>info@coachinginstitute.com</span>

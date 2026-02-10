@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,8 +70,22 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
+        <div className="md:hidden flex items-center gap-2 py-3">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className={`p-2 transition-colors ${scrolled || isOpen ? "text-foreground" : "text-white"}`}
+            aria-label="Toggle theme"
+          >
+            <motion.div
+              key={theme}
+              initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              transition={{ duration: 0.2 }}
+            >
+              {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
+            </motion.div>
+          </motion.button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`p-2 transition-colors ${scrolled || isOpen ? "text-foreground" : "text-white"}`}
